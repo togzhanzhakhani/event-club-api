@@ -164,49 +164,49 @@ All cron tasks are configured via Laravel Scheduler and executed asynchronously 
 
 ### Authentication
 ```
-POST   /api/register          - Регистрация
-POST   /api/login             - Вход
-POST   /api/logout            - Выход
-GET    /api/user              - Текущий пользователь
+POST   /api/register         
+POST   /api/login            
+POST   /api/logout           
+GET    /api/user             
 ```
 
 ### Events
 ```
-GET    /api/events            - Список событий (с фильтрами)
-GET    /api/events/{id}       - Детали события
-POST   /api/events/{id}/register - Регистрация на событие
-GET    /api/events/upcoming   - Ближайшие события
+GET    /api/events           
+GET    /api/events/{id}      
+POST   /api/events/{id}/register 
+GET    /api/events/upcoming  
 ```
 
 ### Competitions
 ```
-GET    /api/competitions      - Список конкурсов
-GET    /api/competitions/{id} - Детали конкурса
-POST   /api/competitions/{id}/participate - Участвовать
-GET    /api/competitions/my   - Мои участия
+GET    /api/competitions     
+GET    /api/competitions/{id}
+POST   /api/competitions/{id}/participate 
+GET    /api/competitions/my
 ```
 
 ### Posts
 ```
-GET    /api/posts             - Список постов
-GET    /api/posts/{id}        - Детали поста
+GET    /api/posts          
+GET    /api/posts/{id}     
 ```
 
 ### Profile
 ```
-GET    /api/profile           - Профиль пользователя
-PUT    /api/profile           - Обновить профиль
-GET    /api/profile/events    - Мои события
-GET    /api/profile/history   - История посещений
+GET    /api/profile        
+PUT    /api/profile        
+GET    /api/profile/events 
+GET    /api/profile/history
 ```
 
 ### Admin (требует role=admin)
 ```
-POST   /api/admin/events      - Создать событие
-PUT    /api/admin/events/{id} - Обновить событие
-DELETE /api/admin/events/{id} - Удалить событие
-POST   /api/admin/competitions - Создать конкурс
-POST   /api/admin/posts       - Создать пост
+POST   /api/admin/events   
+PUT    /api/admin/events/{id} 
+DELETE /api/admin/events/{id} 
+POST   /api/admin/competitions
+POST   /api/admin/posts      
 ```
 ---
 
