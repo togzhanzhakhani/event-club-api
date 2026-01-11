@@ -94,7 +94,6 @@ app/
 
 - **Thin controllers** — no business logic inside controllers
 - **Service layer** — core domain logic lives in Services
-- **DTOs** — structured data passed between layers
 - **FormRequest validation** — all request validation is centralized
 - **Jobs & queues** — heavy and scheduled logic is asynchronous
 - **API Resources** — consistent response formatting
@@ -161,28 +160,59 @@ All cron tasks are configured via Laravel Scheduler and executed asynchronously 
 
 ---
 
-## API Design
+## 🔗 API Endpoints
 
-- RESTful endpoints
-- JSON responses
-- Version-ready structure
-- Consistent error handling
-- Resource-based response formatting
+### Authentication
+```
+POST   /api/register          - Регистрация
+POST   /api/login             - Вход
+POST   /api/logout            - Выход
+GET    /api/user              - Текущий пользователь
+```
 
-Example endpoints:
+### Events
+```
+GET    /api/events            - Список событий (с фильтрами)
+GET    /api/events/{id}       - Детали события
+POST   /api/events/{id}/register - Регистрация на событие
+GET    /api/events/upcoming   - Ближайшие события
+```
 
-GET /api/cities
-GET /api/events
-GET /api/events/{id}
-POST /api/events/{id}/register
-GET /api/me/events
+### Competitions
+```
+GET    /api/competitions      - Список конкурсов
+GET    /api/competitions/{id} - Детали конкурса
+POST   /api/competitions/{id}/participate - Участвовать
+GET    /api/competitions/my   - Мои участия
+```
 
+### Posts
+```
+GET    /api/posts             - Список постов
+GET    /api/posts/{id}        - Детали поста
+```
+
+### Profile
+```
+GET    /api/profile           - Профиль пользователя
+PUT    /api/profile           - Обновить профиль
+GET    /api/profile/events    - Мои события
+GET    /api/profile/history   - История посещений
+```
+
+### Admin (требует role=admin)
+```
+POST   /api/admin/events      - Создать событие
+PUT    /api/admin/events/{id} - Обновить событие
+DELETE /api/admin/events/{id} - Удалить событие
+POST   /api/admin/competitions - Создать конкурс
+POST   /api/admin/posts       - Создать пост
+```
 ---
 
 ## Validation & Data Flow
 
 - All incoming requests are validated using **FormRequest** classes
-- Validated data is mapped to **DTOs**
 - Business logic is executed in **Services**
 - Responses are returned via **API Resources**
 
@@ -204,7 +234,7 @@ Paid events and additional services use a **mock payment provider**.
 
 ---
 
-## 📱 Client Applications
+## Client Applications
 
 This API is designed to be consumed by:
 - Mobile application (Flutter)
