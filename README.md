@@ -39,24 +39,56 @@ This model is inspired by **club-based systems** (e.g. gym memberships), but app
 The project follows a **clean and scalable architecture** with clear separation of concerns.
 
 ### Directory Structure
-
+```
 app/
-├── DTO/ # Data Transfer Objects
-├── Enums/ # Enum classes (statuses, types)
-├── Actions/ # Single-responsibility domain actions
-├── Services/ # Business logic layer
-├── Jobs/ # Background jobs (cron, queues)
-├── Models/ # Eloquent models
 ├── Http/
-│ ├── Controllers/ # Thin API controllers
-│ ├── Requests/ # FormRequest validation
-│ ├── Resources/ # API response transformers
-│ └── Middleware/
-database/
-├── migrations/
-├── seeders/
-routes/
-├── api.php
+│   ├── Controllers/
+│   │   ├── Api/
+│   │   │   ├── AuthController.php
+│   │   │   ├── EventController.php
+│   │   │   ├── CompetitionController.php
+│   │   │   ├── PostController.php
+│   │   │   └── ProfileController.php
+│   ├── Requests/
+│   │   ├── Auth/
+│   │   │   ├── LoginRequest.php
+│   │   │   └── RegisterRequest.php
+│   │   ├── Event/
+│   │   │   ├── StoreEventRequest.php
+│   │   │   └── RegisterEventRequest.php
+│   │   └── Competition/
+│   │       └── ParticipateRequest.php
+│   ├── Resources/
+│   │   ├── EventResource.php
+│   │   ├── EventCollection.php
+│   │   ├── CompetitionResource.php
+│   │   ├── PostResource.php
+│   │   └── UserResource.php
+│   └── Middleware/
+│       ├── AdminMiddleware.php
+│       └── CheckSubscription.php
+├── Models/
+│   ├── User.php
+│   ├── Event.php
+│   ├── EventCategory.php
+│   ├── EventRegistration.php
+│   ├── Competition.php
+│   ├── CompetitionEntry.php
+│   ├── Post.php
+│   ├── City.php
+│   ├── Venue.php
+│   └── Hall.php
+├── Services/
+│   ├── EventService.php
+│   ├── CompetitionService.php
+│   └── NotificationService.php
+├── Jobs/
+│   ├── DailyEventGeneratorJob.php
+│   ├── DailyCompetitionCheckJob.php
+│   └── SendNotificationJob.php
+└── Console/
+    └── Kernel.php (cron jobs)
+```
 
 ### Architectural Principles
 
