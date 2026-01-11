@@ -10,19 +10,52 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
     protected $fillable = [
         'name',
         'email',
         'password',
+        'role',
+        'preferences',
     ];
 
     protected $hidden = [
         'password',
         'remember_token',
     ];
-    
+
     protected $casts = [
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
+        'preferences' => 'array',
     ];
+
+    public function eventRegistrations()
+    {
+        return $this->hasMany(EventRegistration::class);
+    }
+
+    public function competitionEntries()
+    {
+        return $this->hasMany(CompetitionEntry::class);
+    }
+
+    public function registeredEvents()
+    {
+        return $this->belongsToMany(Event::class, 'event_registrations')
+                    ->withPivot('status', 'registered_at', 'attended_at')
+                    ->withTimestamps();
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+
+    public function attendedEventsCount(): int
+    {
+        return $this->eventRegistrations()
+                    ->where('status', 'attended')
+                    ->count();
+    }
 }
