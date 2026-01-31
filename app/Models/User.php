@@ -15,7 +15,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role',
+        'role_id',
         'preferences',
     ];
 
@@ -45,11 +45,6 @@ class User extends Authenticatable
         return $this->belongsToMany(Event::class, 'event_registrations')
                     ->withPivot('status', 'registered_at', 'attended_at')
                     ->withTimestamps();
-    }
-
-    public function isAdmin(): bool
-    {
-        return $this->role === 'admin';
     }
 
     public function attendedEventsCount(): int

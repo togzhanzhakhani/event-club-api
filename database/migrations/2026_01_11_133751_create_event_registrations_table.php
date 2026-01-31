@@ -16,7 +16,6 @@ return new class extends Migration
             $table->timestamp('registered_at')->useCurrent();
             $table->timestamp('attended_at')->nullable();
             $table->timestamps();
-            
             $table->unique(['user_id', 'event_id']);
         });
     }

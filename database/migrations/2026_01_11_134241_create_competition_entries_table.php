@@ -15,7 +15,6 @@ return new class extends Migration
             $table->string('status')->default('participated'); // participated, winner
             $table->timestamp('participated_at')->useCurrent();
             $table->timestamps();
-            
             $table->unique(['competition_id', 'user_id']);
         });
     }
