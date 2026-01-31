@@ -1,14 +1,14 @@
 <?php
 
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\CityController;
 use App\Http\Controllers\EventController;
+use App\Http\Controllers\MetaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-Route::get('/cities', [CityController::class, 'index']);
+Route::get('/meta', [MetaController::class, 'index']);
 Route::get('/events', [EventController::class, 'index']);
 Route::get('/events/{event}', [EventController::class, 'show']);
 Route::middleware('auth:sanctum')->group(function () {

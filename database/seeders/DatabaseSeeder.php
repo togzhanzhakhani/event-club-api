@@ -3,20 +3,50 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\City;
+use App\Models\EventCategory;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $cities = [
+            'Almaty',
+            'Astana',
+            'Shymkent',
+            'Karaganda',
+        ];
+        foreach ($cities as $city) {
+            City::create([
+                'name' => $city,
+            ]);
+        }
+        $categories = [
+            [
+                'name' => 'Technology',
+                'icon' => 'code',
+                'color' => '#4F46E5',
+            ],
+            [
+                'name' => 'Business',
+                'icon' => 'briefcase',
+                'color' => '#059669',
+            ],
+            [
+                'name' => 'Art',
+                'icon' => 'palette',
+                'color' => '#F59E0B',
+            ],
+            [
+                'name' => 'Workshop',
+                'icon' => 'megaphone',
+                'color' => '#EC4899',
+            ]
+        ];
+        foreach ($categories as $category) {
+            EventCategory::create($category);
+        }
     }
 }
