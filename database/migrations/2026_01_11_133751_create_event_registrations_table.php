@@ -12,9 +12,6 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('event_id')->constrained()->cascadeOnDelete();
-            $table->string('status')->default('registered'); // registered, attended, cancelled
-            $table->timestamp('registered_at')->useCurrent();
-            $table->timestamp('attended_at')->nullable();
             $table->timestamps();
             $table->unique(['user_id', 'event_id']);
         });

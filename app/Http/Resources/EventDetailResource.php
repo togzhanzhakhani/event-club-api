@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Storage;
 
-class EventResource extends JsonResource
+class EventDetailResource extends JsonResource
 {
-    public function toArray($request)
+    public function toArray(Request $request): array
     {
+        $user = $request->user();
         return [
             'id' => $this->id,
             'title' => $this->title,
@@ -18,9 +19,18 @@ class EventResource extends JsonResource
                 ? $this->starts_at->translatedFormat('d F, Y') : null,
             'starts_time' => $this->starts_at
                 ? $this->starts_at->format('H:i') : null,
+            'ends_at' => $this->ends_at,
             'price' => $this->price,
-            'category' => $this->category->name,
             'image' => url(Storage::url($this->image)),
+            'full_address' => implode(', ', array_filter([
+                $this->venue->name,
+                $this->venue->address,
+                $this->venue->city->name,
+            ])),
+            'hall' => $this->hall->name,
+            'category' => $this->category->name,
+            'is_user_registered' => $user
+                ? $this->isUserRegistered($user->id) : false,
             'capacity' => $this->max_participants,
             'registered_count' => $this->registrations(),
         ];
