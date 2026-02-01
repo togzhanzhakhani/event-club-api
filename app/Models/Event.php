@@ -14,7 +14,6 @@ class Event extends Model
         'description',
         'event_type',
         'starts_at',
-        'ends_at',
         'venue_id',
         'hall_id',
         'category_id',

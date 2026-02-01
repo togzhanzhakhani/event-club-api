@@ -19,7 +19,6 @@ class EventDetailResource extends JsonResource
                 ? $this->starts_at->translatedFormat('d F, Y') : null,
             'starts_time' => $this->starts_at
                 ? $this->starts_at->format('H:i') : null,
-            'ends_at' => $this->ends_at,
             'price' => $this->price,
             'image' => url(Storage::url($this->image)),
             'full_address' => implode(', ', array_filter([
