@@ -43,14 +43,6 @@ class User extends \TCG\Voyager\Models\User
     public function registeredEvents()
     {
         return $this->belongsToMany(Event::class, 'event_registrations')
-                    ->withPivot('status', 'registered_at', 'attended_at')
                     ->withTimestamps();
-    }
-
-    public function attendedEventsCount(): int
-    {
-        return $this->eventRegistrations()
-                    ->where('status', 'attended')
-                    ->count();
     }
 }
