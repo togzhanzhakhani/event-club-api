@@ -22,7 +22,7 @@ class EventResource extends JsonResource
             'category' => $this->category->name,
             'image' => url(Storage::url($this->image)),
             'capacity' => $this->max_participants,
-            'registered_count' => $this->registrations(),
+            'registered_count' => $this->registrations()->count(),
         ];
     }
 }

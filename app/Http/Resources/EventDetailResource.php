@@ -31,7 +31,7 @@ class EventDetailResource extends JsonResource
             'is_user_registered' => $user
                 ? $this->isUserRegistered($user->id) : false,
             'capacity' => $this->max_participants,
-            'registered_count' => $this->registrations(),
+            'registered_count' => $this->registrations()->count(),
         ];
     }
 }
