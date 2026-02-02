@@ -53,9 +53,6 @@ app/
 │   │   ├── Auth/
 │   │   │   ├── LoginRequest.php
 │   │   │   └── RegisterRequest.php
-│   │   ├── Event/
-│   │   │   ├── StoreEventRequest.php
-│   │   │   └── RegisterEventRequest.php
 │   │   └── Competition/
 │   │       └── ParticipateRequest.php
 │   ├── Resources/
@@ -64,9 +61,6 @@ app/
 │   │   ├── CompetitionResource.php
 │   │   ├── PostResource.php
 │   │   └── UserResource.php
-│   └── Middleware/
-│       ├── AdminMiddleware.php
-│       └── CheckSubscription.php
 ├── Models/
 │   ├── User.php
 │   ├── Event.php
@@ -166,7 +160,6 @@ All cron tasks are configured via Laravel Scheduler and executed asynchronously 
 ```
 POST   /api/register         
 POST   /api/login            
-POST   /api/logout           
 GET    /api/user             
 ```
 
@@ -174,8 +167,7 @@ GET    /api/user
 ```
 GET    /api/events           
 GET    /api/events/{id}      
-POST   /api/events/{id}/register 
-GET    /api/events/upcoming  
+POST   /api/events/{id}/register  
 ```
 
 ### Competitions
@@ -198,15 +190,6 @@ GET    /api/profile
 PUT    /api/profile        
 GET    /api/profile/events 
 GET    /api/profile/history
-```
-
-### Admin (требует role=admin)
-```
-POST   /api/admin/events   
-PUT    /api/admin/events/{id} 
-DELETE /api/admin/events/{id} 
-POST   /api/admin/competitions
-POST   /api/admin/posts      
 ```
 ---
 
