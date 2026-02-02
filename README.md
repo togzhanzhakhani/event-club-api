@@ -2,7 +2,7 @@
 
 Backend REST API for a multi-city **event discovery and attendance platform**, where users can browse, register for, and attend daily events such as meetups, workshops, festivals, hackathons, and talks.
 
-The system follows a **membership-based club model** (similar to fitness club applications), where all events are created and managed centrally via admin panel, and users consume events through a mobile application.
+All events are created and managed centrally via admin panel, and users consume events through a mobile application.
 
 ---
 
@@ -28,9 +28,6 @@ The system follows a **membership-based club model** (similar to fitness club ap
   - Filter events by city, category, date
   - Register for events
 - All events, content, and schedules are managed by administrators
-
-This model is inspired by **club-based systems** (e.g. gym memberships), but applied to event discovery and attendance.
-
 ---
 
 ## System Architecture
@@ -113,13 +110,6 @@ The system relies heavily on scheduled background jobs.
   - Aggregates events scheduled for the next day
   - Generates internal preparation reports (attendance, services)
 
-- **MembershipExpirationJob**
-  - Checks expired memberships
-  - Updates statuses and sends notifications
-
-- **ContentAutoPublishJob**
-  - Automatically publishes scheduled posts
-
 All cron tasks are configured via Laravel Scheduler and executed asynchronously using queues.
 
 ---
@@ -187,7 +177,7 @@ Paid events and additional services use a **mock payment provider**.
 
 This API is designed to be consumed by:
 - Mobile application (Flutter)
-- Admin panel (future scope)
+- Admin panel (Voyager)
 
 ---
 
