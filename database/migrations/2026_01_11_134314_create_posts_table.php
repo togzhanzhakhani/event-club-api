@@ -14,7 +14,6 @@ return new class extends Migration
             $table->text('content');
             $table->string('image')->nullable();
             $table->foreignId('category_id')->nullable()->constrained('event_categories');
-            $table->timestamp('published_at')->nullable();
             $table->timestamps();
         });
     }
