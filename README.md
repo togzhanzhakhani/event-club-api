@@ -58,7 +58,7 @@ app/
 │   │   ├── EventResource.php
 │   │   ├── EventDatailResource.php
 │   │   ├── PostResource.php
-│   │   └── UserResource.php
+│   │   └── ProfileResource.php
 ├── Models/
 │   ├── User.php
 │   ├── Event.php
@@ -68,12 +68,8 @@ app/
 │   ├── City.php
 │   ├── Venue.php
 │   └── Hall.php
-├── Services/
-│   ├── EventService.php
-│   └── NotificationService.php
 ├── Jobs/
 │   ├── DailyEventGeneratorJob.php
-│   └── SendNotificationJob.php
 └── Console/
     └── Kernel.php (cron jobs)
 ```
@@ -81,7 +77,6 @@ app/
 ### Architectural Principles
 
 - **Thin controllers** — no business logic inside controllers
-- **Service layer** — core domain logic lives in Services
 - **FormRequest validation** — all request validation is centralized
 - **Jobs & queues** — heavy and scheduled logic is asynchronous
 - **API Resources** — consistent response formatting
@@ -106,7 +101,6 @@ app/
 
 ### Content
 - **Post** — news, announcements, articles
-- **Media** — polymorphic media storage (images, files)
 ---
 
 ## Background Jobs & Cron Tasks
@@ -123,11 +117,6 @@ The system relies heavily on scheduled background jobs.
   - Checks expired memberships
   - Updates statuses and sends notifications
 
-- **CompetitionResolutionJob**
-  - Finalizes competitions
-  - Selects winners
-  - Sends notifications
-
 - **ContentAutoPublishJob**
   - Automatically publishes scheduled posts
 
@@ -143,7 +132,7 @@ All cron tasks are configured via Laravel Scheduler and executed asynchronously 
 
 ---
 
-## 🔗 API Endpoints
+## API Endpoints
 
 ### Authentication
 ```
@@ -167,16 +156,13 @@ GET    /api/posts/{id}
 ### Profile
 ```
 GET    /api/profile        
-PUT    /api/profile        
-GET    /api/profile/events 
-GET    /api/profile/history
+PUT    /api/profile
 ```
 ---
 
 ## Validation & Data Flow
 
 - All incoming requests are validated using **FormRequest** classes
-- Business logic is executed in **Services**
 - Responses are returned via **API Resources**
 
 This approach improves:

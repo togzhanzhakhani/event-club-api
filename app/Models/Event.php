@@ -53,4 +53,12 @@ class Event extends Model
         return $this->registrations()
                 ->where('user_id', $userId)->exists();
     }
+
+    public function hasFreeSlots(): bool
+    {
+        if ($this->max_participants === null) {
+            return true;
+        }
+        return $this->registrations()->count() < $this->max_participants;
+    }
 }
