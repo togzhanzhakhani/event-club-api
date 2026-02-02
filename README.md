@@ -127,8 +127,10 @@ All cron tasks are configured via Laravel Scheduler and executed asynchronously 
 ## API Documentation
 
 API is documented using OpenAPI 3.0.
+
 Swagger UI is available at:
 https://event.apiapp.kz/api/documentation
+
 Explore the https://event.apiapp.kz/docs/openapi.json
 
 ## API Endpoints
