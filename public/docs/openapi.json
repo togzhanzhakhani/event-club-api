@@ -1,1479 +1,226 @@
 {
+  "openapi": "3.0.0",
   "info": {
-    "_postman_id": "bd3bf877-e71b-4129-a364-5f22311d35c0",
-    "name": "Event club api",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "26850452",
-    "_collection_link": "https://go.postman.co/collection/26850452-bd3bf877-e71b-4129-a364-5f22311d35c0?source=collection_link"
+    "title": "Event club api",
+    "description": "",
+    "version": "1.0.0"
   },
-  "item": [
-    {
-      "name": "Auth",
-      "item": [
-        {
-          "name": "meta",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "https://event.apiapp.kz/api/meta",
-              "protocol": "https",
-              "host": [
-                "event",
-                "apiapp",
-                "kz"
-              ],
-              "path": [
-                "api",
-                "meta"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "meta",
-              "originalRequest": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json",
-                    "type": "text"
-                  }
-                ],
-                "url": {
-                  "raw": "https://event.apiapp.kz/api/meta",
-                  "protocol": "https",
-                  "host": [
-                    "event",
-                    "apiapp",
-                    "kz"
-                  ],
-                  "path": [
-                    "api",
-                    "meta"
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": null,
-              "header": [
-                {
-                  "key": "Server",
-                  "value": "nginx"
-                },
-                {
-                  "key": "Date",
-                  "value": "Sat, 31 Jan 2026 19:47:12 GMT"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive"
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "private, must-revalidate"
-                },
-                {
-                  "key": "pragma",
-                  "value": "no-cache"
-                },
-                {
-                  "key": "expires",
-                  "value": "-1"
-                },
-                {
-                  "key": "X-RateLimit-Limit",
-                  "value": "60"
-                },
-                {
-                  "key": "X-RateLimit-Remaining",
-                  "value": "58"
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*"
-                },
-                {
-                  "key": "X-Powered-By",
-                  "value": "PleskLin"
-                },
-                {
-                  "key": "Content-Encoding",
-                  "value": "br"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"cities\": [\n        {\n            \"id\": 1,\n            \"name\": \"Almaty\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Astana\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Karaganda\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Shymkent\"\n        }\n    ],\n    \"categories\": [\n        {\n            \"id\": 3,\n            \"name\": \"Art\",\n            \"icon\": \"palette\",\n            \"color\": \"#F59E0B\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Business\",\n            \"icon\": \"briefcase\",\n            \"color\": \"#059669\"\n        },\n        {\n            \"id\": 1,\n            \"name\": \"Technology\",\n            \"icon\": \"code\",\n            \"color\": \"#4F46E5\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Workshop\",\n            \"icon\": \"megaphone\",\n            \"color\": \"#EC4899\"\n        }\n    ]\n}"
-            }
-          ]
-        },
-        {
-          "name": "register",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"name\": \"Aigerim\",\r\n  \"email\": \"aigerim@mail.kz\",\r\n  \"password\": \"password\",\r\n  \"password_confirmation\": \"password\",\r\n  \"preferences\": {\r\n    \"city_id\": 1,\r\n    \"categories\": [1, 2]\r\n  }\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "https://event.apiapp.kz/api/register",
-              "protocol": "https",
-              "host": [
-                "event",
-                "apiapp",
-                "kz"
-              ],
-              "path": [
-                "api",
-                "register"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "register",
-              "originalRequest": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json",
-                    "type": "text"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"name\": \"Aigerim\",\r\n  \"email\": \"aigerim@mail.kz\",\r\n  \"password\": \"password\",\r\n  \"password_confirmation\": \"password\",\r\n  \"preferences\": {\r\n    \"city_id\": 1,\r\n    \"categories\": [1, 2]\r\n  }\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "https://event.apiapp.kz/api/register",
-                  "protocol": "https",
-                  "host": [
-                    "event",
-                    "apiapp",
-                    "kz"
-                  ],
-                  "path": [
-                    "api",
-                    "register"
-                  ]
-                }
-              },
-              "status": "Created",
-              "code": 201,
-              "_postman_previewlanguage": null,
-              "header": [
-                {
-                  "key": "Server",
-                  "value": "nginx"
-                },
-                {
-                  "key": "Date",
-                  "value": "Sat, 31 Jan 2026 19:48:55 GMT"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive"
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "private, must-revalidate"
-                },
-                {
-                  "key": "pragma",
-                  "value": "no-cache"
-                },
-                {
-                  "key": "expires",
-                  "value": "-1"
-                },
-                {
-                  "key": "X-RateLimit-Limit",
-                  "value": "60"
-                },
-                {
-                  "key": "X-RateLimit-Remaining",
-                  "value": "58"
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*"
-                },
-                {
-                  "key": "X-Powered-By",
-                  "value": "PleskLin"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"token\": \"1|7H3crBwggm5X5e9Uivg4WpirwYnbGa1wKqSATom36b3a39a8\"\n}"
-            }
-          ]
-        },
-        {
-          "name": "login",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n  \"email\": \"aigerim@mail.kz\",\r\n  \"password\": \"password\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
-            "url": {
-              "raw": "https://event.apiapp.kz/api/login",
-              "protocol": "https",
-              "host": [
-                "event",
-                "apiapp",
-                "kz"
-              ],
-              "path": [
-                "api",
-                "login"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "login",
-              "originalRequest": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json",
-                    "type": "text"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n  \"email\": \"aigerim@mail.kz\",\r\n  \"password\": \"password\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "https://event.apiapp.kz/api/login",
-                  "protocol": "https",
-                  "host": [
-                    "event",
-                    "apiapp",
-                    "kz"
-                  ],
-                  "path": [
-                    "api",
-                    "login"
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": null,
-              "header": [
-                {
-                  "key": "Server",
-                  "value": "nginx"
-                },
-                {
-                  "key": "Date",
-                  "value": "Sat, 31 Jan 2026 19:49:49 GMT"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive"
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "private, must-revalidate"
-                },
-                {
-                  "key": "pragma",
-                  "value": "no-cache"
-                },
-                {
-                  "key": "expires",
-                  "value": "-1"
-                },
-                {
-                  "key": "X-RateLimit-Limit",
-                  "value": "60"
-                },
-                {
-                  "key": "X-RateLimit-Remaining",
-                  "value": "59"
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*"
-                },
-                {
-                  "key": "X-Powered-By",
-                  "value": "PleskLin"
-                },
-                {
-                  "key": "Content-Encoding",
-                  "value": "br"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"token\": \"2|AIdIsv0RGD5jJiHyUJOaFZjknbezeThEmZRREVmx8c5644f6\"\n}"
-            }
-          ]
+  "servers": [],
+  "paths": {
+    "/api/meta": {
+      "get": {
+        "tags": [
+          "meta"
+        ],
+        "summary": "meta",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
         }
-      ]
+      }
     },
-    {
-      "name": "Events",
-      "item": [
-        {
-          "name": "events",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "https://event.apiapp.kz/api/events",
-              "protocol": "https",
-              "host": [
-                "event",
-                "apiapp",
-                "kz"
-              ],
-              "path": [
-                "api",
-                "events"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "events",
-              "originalRequest": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json",
-                    "type": "text"
-                  }
-                ],
-                "url": {
-                  "raw": "https://event.apiapp.kz/api/events",
-                  "protocol": "https",
-                  "host": [
-                    "event",
-                    "apiapp",
-                    "kz"
-                  ],
-                  "path": [
-                    "api",
-                    "events"
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": null,
-              "header": [
-                {
-                  "key": "Server",
-                  "value": "nginx"
-                },
-                {
-                  "key": "Date",
-                  "value": "Sun, 01 Feb 2026 15:39:48 GMT"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive"
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "private, must-revalidate"
-                },
-                {
-                  "key": "pragma",
-                  "value": "no-cache"
-                },
-                {
-                  "key": "expires",
-                  "value": "-1"
-                },
-                {
-                  "key": "X-RateLimit-Limit",
-                  "value": "60"
-                },
-                {
-                  "key": "X-RateLimit-Remaining",
-                  "value": "59"
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*"
-                },
-                {
-                  "key": "X-Powered-By",
-                  "value": "PleskLin"
-                },
-                {
-                  "key": "Content-Encoding",
-                  "value": "br"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Startup Networking Night\",\n            \"description\": \"Free networking event for founders and developers.\",\n            \"starts_at\": \"03 февраля, 2026\",\n            \"starts_time\": \"00:00\",\n            \"price\": null,\n            \"category\": \"Business\",\n            \"image\": \"https://event.apiapp.kz/storage/events/February2026/IHs9TRQsldhANoVPyPQ1.png\",\n            \"capacity\": 120,\n            \"registered_count\": 0\n        },\n        {\n            \"id\": 2,\n            \"title\": \"AI & Machine Learning Summit\",\n            \"description\": \"Deep dive into AI & Machine and best practices.\",\n            \"starts_at\": \"06 февраля, 2026\",\n            \"starts_time\": \"00:00\",\n            \"price\": \"5000.00\",\n            \"category\": \"Technology\",\n            \"image\": \"https://event.apiapp.kz/storage/events/February2026/CO06ZCVghBB3EgidJseg.png\",\n            \"capacity\": 80,\n            \"registered_count\": 0\n        }\n    ]\n}"
-            }
-          ]
+    "/api/register": {
+      "post": {
+        "tags": [
+          "register"
+        ],
+        "summary": "register",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
         },
-        {
-          "name": "event",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "value": "Bearer 2|jQV7IC3ySVZxiwI2b2LIlKEClhmR2EPgbbjCZUUd59926e15",
-                "type": "text"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "Aigerim",
+                  "email": "aigerim@mail.kz",
+                  "password": "password",
+                  "password_confirmation": "password",
+                  "preferences": {
+                    "city_id": 1,
+                    "categories": [
+                      1,
+                      2
+                    ]
+                  }
+                }
               }
-            ],
-            "url": {
-              "raw": "https://event.apiapp.kz/api/events/1",
-              "protocol": "https",
-              "host": [
-                "event",
-                "apiapp",
-                "kz"
-              ],
-              "path": [
-                "api",
-                "events",
-                "1"
-              ]
             }
-          },
-          "response": [
-            {
-              "name": "event",
-              "originalRequest": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json",
-                    "type": "text"
-                  }
-                ],
-                "url": {
-                  "raw": "https://event.apiapp.kz/api/events/1",
-                  "protocol": "https",
-                  "host": [
-                    "event",
-                    "apiapp",
-                    "kz"
-                  ],
-                  "path": [
-                    "api",
-                    "events",
-                    "1"
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": null,
-              "header": [
-                {
-                  "key": "Server",
-                  "value": "nginx"
-                },
-                {
-                  "key": "Date",
-                  "value": "Sun, 01 Feb 2026 15:40:33 GMT"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive"
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "private, must-revalidate"
-                },
-                {
-                  "key": "pragma",
-                  "value": "no-cache"
-                },
-                {
-                  "key": "expires",
-                  "value": "-1"
-                },
-                {
-                  "key": "X-RateLimit-Limit",
-                  "value": "60"
-                },
-                {
-                  "key": "X-RateLimit-Remaining",
-                  "value": "58"
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*"
-                },
-                {
-                  "key": "X-Powered-By",
-                  "value": "PleskLin"
-                },
-                {
-                  "key": "Content-Encoding",
-                  "value": "br"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Startup Networking Night\",\n        \"description\": \"Free networking event for founders and developers.\",\n        \"starts_at\": \"03 февраля, 2026\",\n        \"starts_time\": \"00:00\",\n        \"price\": null,\n        \"image\": \"https://event.apiapp.kz/storage/events/February2026/IHs9TRQsldhANoVPyPQ1.png\",\n        \"full_address\": \"Event Hub Almaty, Abay Ave 52, Almaty\",\n        \"hall\": \"Main Hall\",\n        \"category\": \"Business\",\n        \"is_user_registered\": false,\n        \"capacity\": 120,\n        \"registered_count\": 0\n    }\n}"
-            }
-          ]
-        },
-        {
-          "name": "register to event",
-          "request": {
-            "method": "POST",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "value": "Bearer 2|jQV7IC3ySVZxiwI2b2LIlKEClhmR2EPgbbjCZUUd59926e15",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "https://event.apiapp.kz/api/events/{{event_id}}/register",
-              "protocol": "https",
-              "host": [
-                "event",
-                "apiapp",
-                "kz"
-              ],
-              "path": [
-                "api",
-                "events",
-                "{{event_id}}",
-                "register"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "register",
-              "originalRequest": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json",
-                    "type": "text"
-                  },
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer 2|jQV7IC3ySVZxiwI2b2LIlKEClhmR2EPgbbjCZUUd59926e15",
-                    "type": "text"
-                  }
-                ],
-                "url": {
-                  "raw": "https://event.apiapp.kz/api/events/1/register",
-                  "protocol": "https",
-                  "host": [
-                    "event",
-                    "apiapp",
-                    "kz"
-                  ],
-                  "path": [
-                    "api",
-                    "events",
-                    "1",
-                    "register"
-                  ]
-                }
-              },
-              "status": "Created",
-              "code": 201,
-              "_postman_previewlanguage": null,
-              "header": [
-                {
-                  "key": "Server",
-                  "value": "nginx"
-                },
-                {
-                  "key": "Date",
-                  "value": "Sun, 01 Feb 2026 15:55:36 GMT"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive"
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "private, must-revalidate"
-                },
-                {
-                  "key": "pragma",
-                  "value": "no-cache"
-                },
-                {
-                  "key": "expires",
-                  "value": "-1"
-                },
-                {
-                  "key": "X-RateLimit-Limit",
-                  "value": "60"
-                },
-                {
-                  "key": "X-RateLimit-Remaining",
-                  "value": "59"
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*"
-                },
-                {
-                  "key": "Vary",
-                  "value": "Authorization"
-                },
-                {
-                  "key": "X-Powered-By",
-                  "value": "PleskLin"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"message\": \"SUCCESS\"\n}"
-            },
-            {
-              "name": "register to event",
-              "originalRequest": {
-                "method": "POST",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json",
-                    "type": "text"
-                  },
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer 2|jQV7IC3ySVZxiwI2b2LIlKEClhmR2EPgbbjCZUUd59926e15",
-                    "type": "text"
-                  }
-                ],
-                "url": {
-                  "raw": "https://event.apiapp.kz/api/events/1/register",
-                  "protocol": "https",
-                  "host": [
-                    "event",
-                    "apiapp",
-                    "kz"
-                  ],
-                  "path": [
-                    "api",
-                    "events",
-                    "1",
-                    "register"
-                  ]
-                }
-              },
-              "status": "Unprocessable Content",
-              "code": 422,
-              "_postman_previewlanguage": null,
-              "header": [
-                {
-                  "key": "Server",
-                  "value": "nginx"
-                },
-                {
-                  "key": "Date",
-                  "value": "Mon, 02 Feb 2026 09:47:17 GMT"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive"
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "private, must-revalidate"
-                },
-                {
-                  "key": "pragma",
-                  "value": "no-cache"
-                },
-                {
-                  "key": "expires",
-                  "value": "-1"
-                },
-                {
-                  "key": "X-RateLimit-Limit",
-                  "value": "60"
-                },
-                {
-                  "key": "X-RateLimit-Remaining",
-                  "value": "59"
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*"
-                },
-                {
-                  "key": "Vary",
-                  "value": "Authorization"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"message\": \"No available slots for this event\"\n}"
-            }
-          ]
-        },
-        {
-          "name": "my events",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "value": "Bearer 2|jQV7IC3ySVZxiwI2b2LIlKEClhmR2EPgbbjCZUUd59926e15",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "https://event.apiapp.kz/api/my/events",
-              "protocol": "https",
-              "host": [
-                "event",
-                "apiapp",
-                "kz"
-              ],
-              "path": [
-                "api",
-                "my",
-                "events"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "my events",
-              "originalRequest": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json",
-                    "type": "text"
-                  },
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer 2|jQV7IC3ySVZxiwI2b2LIlKEClhmR2EPgbbjCZUUd59926e15",
-                    "type": "text"
-                  }
-                ],
-                "url": {
-                  "raw": "https://event.apiapp.kz/api/my/events",
-                  "protocol": "https",
-                  "host": [
-                    "event",
-                    "apiapp",
-                    "kz"
-                  ],
-                  "path": [
-                    "api",
-                    "my",
-                    "events"
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": null,
-              "header": [
-                {
-                  "key": "Server",
-                  "value": "nginx"
-                },
-                {
-                  "key": "Date",
-                  "value": "Mon, 02 Feb 2026 09:58:27 GMT"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive"
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "private, must-revalidate"
-                },
-                {
-                  "key": "pragma",
-                  "value": "no-cache"
-                },
-                {
-                  "key": "expires",
-                  "value": "-1"
-                },
-                {
-                  "key": "X-RateLimit-Limit",
-                  "value": "60"
-                },
-                {
-                  "key": "X-RateLimit-Remaining",
-                  "value": "59"
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*"
-                },
-                {
-                  "key": "Vary",
-                  "value": "Authorization"
-                },
-                {
-                  "key": "X-Powered-By",
-                  "value": "PleskLin"
-                },
-                {
-                  "key": "Content-Encoding",
-                  "value": "br"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"title\": \"Startup Networking Night\",\n            \"description\": \"Free networking event for founders and developers.\",\n            \"starts_at\": \"03 февраля, 2026\",\n            \"starts_time\": \"00:00\",\n            \"price\": null,\n            \"category\": \"Business\",\n            \"image\": \"https://event.apiapp.kz/storage/events/February2026/IHs9TRQsldhANoVPyPQ1.png\",\n            \"capacity\": 120,\n            \"registered_count\": 1\n        }\n    ]\n}"
-            }
-          ]
+          }
         }
-      ]
+      }
     },
-    {
-      "name": "Profile",
-      "item": [
-        {
-          "name": "profile",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "value": "Bearer 2|jQV7IC3ySVZxiwI2b2LIlKEClhmR2EPgbbjCZUUd59926e15",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "https://event.apiapp.kz/api/profile",
-              "protocol": "https",
-              "host": [
-                "event",
-                "apiapp",
-                "kz"
-              ],
-              "path": [
-                "api",
-                "profile"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "profile",
-              "originalRequest": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json",
-                    "type": "text"
-                  },
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer 2|jQV7IC3ySVZxiwI2b2LIlKEClhmR2EPgbbjCZUUd59926e15",
-                    "type": "text"
-                  }
-                ],
-                "url": {
-                  "raw": "https://event.apiapp.kz/api/profile",
-                  "protocol": "https",
-                  "host": [
-                    "event",
-                    "apiapp",
-                    "kz"
-                  ],
-                  "path": [
-                    "api",
-                    "profile"
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": null,
-              "header": [
-                {
-                  "key": "Server",
-                  "value": "nginx"
-                },
-                {
-                  "key": "Date",
-                  "value": "Mon, 02 Feb 2026 10:37:34 GMT"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive"
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "private, must-revalidate"
-                },
-                {
-                  "key": "pragma",
-                  "value": "no-cache"
-                },
-                {
-                  "key": "expires",
-                  "value": "-1"
-                },
-                {
-                  "key": "X-RateLimit-Limit",
-                  "value": "60"
-                },
-                {
-                  "key": "X-RateLimit-Remaining",
-                  "value": "59"
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*"
-                },
-                {
-                  "key": "Vary",
-                  "value": "Authorization"
-                },
-                {
-                  "key": "X-Powered-By",
-                  "value": "PleskLin"
-                },
-                {
-                  "key": "Content-Encoding",
-                  "value": "br"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Aigerim\",\n        \"email\": \"aigerim@mail.kz\",\n        \"preferences\": {\n            \"city_id\": 1,\n            \"categories\": [\n                {\n                    \"name\": \"Technology\"\n                },\n                {\n                    \"name\": \"Business\"\n                }\n            ]\n        }\n    }\n}"
-            }
-          ]
+    "/api/login": {
+      "post": {
+        "tags": [
+          "login"
+        ],
+        "summary": "login",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
         },
-        {
-          "name": "update prodile",
-          "request": {
-            "method": "PUT",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              },
-              {
-                "key": "Authorization",
-                "value": "Bearer 2|jQV7IC3ySVZxiwI2b2LIlKEClhmR2EPgbbjCZUUd59926e15",
-                "type": "text"
-              }
-            ],
-            "body": {
-              "mode": "raw",
-              "raw": "{\r\n    \"name\": \"Aizhan\",\r\n    \"email\": \"aizhan@mail.kz\"\r\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "email": "aigerim@mail.kz",
+                  "password": "password"
                 }
               }
-            },
-            "url": {
-              "raw": "https://event.apiapp.kz/api/profile",
-              "protocol": "https",
-              "host": [
-                "event",
-                "apiapp",
-                "kz"
-              ],
-              "path": [
-                "api",
-                "profile"
-              ]
             }
-          },
-          "response": [
-            {
-              "name": "update prodile",
-              "originalRequest": {
-                "method": "PUT",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json",
-                    "type": "text"
-                  },
-                  {
-                    "key": "Authorization",
-                    "value": "Bearer 2|jQV7IC3ySVZxiwI2b2LIlKEClhmR2EPgbbjCZUUd59926e15",
-                    "type": "text"
-                  }
-                ],
-                "body": {
-                  "mode": "raw",
-                  "raw": "{\r\n    \"name\": \"Aizhan\",\r\n    \"email\": \"aizhan@mail.kz\"\r\n}",
-                  "options": {
-                    "raw": {
-                      "language": "json"
-                    }
-                  }
-                },
-                "url": {
-                  "raw": "https://event.apiapp.kz/api/profile",
-                  "protocol": "https",
-                  "host": [
-                    "event",
-                    "apiapp",
-                    "kz"
-                  ],
-                  "path": [
-                    "api",
-                    "profile"
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": null,
-              "header": [
-                {
-                  "key": "Server",
-                  "value": "nginx"
-                },
-                {
-                  "key": "Date",
-                  "value": "Mon, 02 Feb 2026 10:39:20 GMT"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive"
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "private, must-revalidate"
-                },
-                {
-                  "key": "pragma",
-                  "value": "no-cache"
-                },
-                {
-                  "key": "expires",
-                  "value": "-1"
-                },
-                {
-                  "key": "X-RateLimit-Limit",
-                  "value": "60"
-                },
-                {
-                  "key": "X-RateLimit-Remaining",
-                  "value": "58"
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*"
-                },
-                {
-                  "key": "Vary",
-                  "value": "Authorization"
-                },
-                {
-                  "key": "X-Powered-By",
-                  "value": "PleskLin"
-                },
-                {
-                  "key": "Content-Encoding",
-                  "value": "br"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"data\": {\n        \"id\": 2,\n        \"name\": \"Aizhan\",\n        \"email\": \"aizhan@mail.kz\",\n        \"preferences\": {\n            \"city_id\": 1,\n            \"categories\": [\n                {\n                    \"name\": \"Technology\"\n                },\n                {\n                    \"name\": \"Business\"\n                }\n            ]\n        }\n    }\n}"
-            }
-          ]
+          }
         }
-      ]
+      }
     },
-    {
-      "name": "News posts",
-      "item": [
-        {
-          "name": "posts",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "https://event.apiapp.kz/api/posts",
-              "protocol": "https",
-              "host": [
-                "event",
-                "apiapp",
-                "kz"
-              ],
-              "path": [
-                "api",
-                "posts"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "posts",
-              "originalRequest": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json",
-                    "type": "text"
-                  }
-                ],
-                "url": {
-                  "raw": "https://event.apiapp.kz/api/posts",
-                  "protocol": "https",
-                  "host": [
-                    "event",
-                    "apiapp",
-                    "kz"
-                  ],
-                  "path": [
-                    "api",
-                    "posts"
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": null,
-              "header": [
-                {
-                  "key": "Server",
-                  "value": "nginx"
-                },
-                {
-                  "key": "Date",
-                  "value": "Mon, 02 Feb 2026 11:59:15 GMT"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive"
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "private, must-revalidate"
-                },
-                {
-                  "key": "pragma",
-                  "value": "no-cache"
-                },
-                {
-                  "key": "expires",
-                  "value": "-1"
-                },
-                {
-                  "key": "X-RateLimit-Limit",
-                  "value": "60"
-                },
-                {
-                  "key": "X-RateLimit-Remaining",
-                  "value": "59"
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*"
-                },
-                {
-                  "key": "X-Powered-By",
-                  "value": "PleskLin"
-                },
-                {
-                  "key": "Content-Encoding",
-                  "value": "br"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"data\": [\n        {\n            \"id\": 3,\n            \"title\": \"Free Workshops and Meetups This Week\",\n            \"content\": \"Join free workshops, lectures, and networking events happening across different cities.\",\n            \"image\": \"https://event.apiapp.kz/storage/posts/free-events.jpg\",\n            \"category\": \"Technology\",\n            \"views\": 0,\n            \"created_at\": \"01 фев, 2026\"\n        },\n        {\n            \"id\": 2,\n            \"title\": \"Community Events: Why Offline Still Matters\",\n            \"content\": \"Offline events help build stronger professional communities. Here’s why in-person events still matter.\",\n            \"image\": \"https://event.apiapp.kz/storage/posts/community.jpg\",\n            \"category\": \"Workshop\",\n            \"views\": 0,\n            \"created_at\": \"31 янв, 2026\"\n        },\n        {\n            \"id\": 1,\n            \"title\": \"Upcoming Tech Events This Month\",\n            \"content\": \"Discover the most exciting tech meetups, hackathons, and conferences happening this month in our venues.\",\n            \"image\": \"https://event.apiapp.kz/storage/posts/tech-events.jpg\",\n            \"category\": \"Business\",\n            \"views\": 0,\n            \"created_at\": \"28 янв, 2026\"\n        }\n    ]\n}"
-            }
-          ]
-        },
-        {
-          "name": "post",
-          "request": {
-            "method": "GET",
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json",
-                "type": "text"
-              }
-            ],
-            "url": {
-              "raw": "https://event.apiapp.kz/api/posts/{{id}}",
-              "protocol": "https",
-              "host": [
-                "event",
-                "apiapp",
-                "kz"
-              ],
-              "path": [
-                "api",
-                "posts",
-                "{{id}}"
-              ]
-            }
-          },
-          "response": [
-            {
-              "name": "post",
-              "originalRequest": {
-                "method": "GET",
-                "header": [
-                  {
-                    "key": "Accept",
-                    "value": "application/json",
-                    "type": "text"
-                  }
-                ],
-                "url": {
-                  "raw": "https://event.apiapp.kz/api/posts/1",
-                  "protocol": "https",
-                  "host": [
-                    "event",
-                    "apiapp",
-                    "kz"
-                  ],
-                  "path": [
-                    "api",
-                    "posts",
-                    "1"
-                  ]
-                }
-              },
-              "status": "OK",
-              "code": 200,
-              "_postman_previewlanguage": null,
-              "header": [
-                {
-                  "key": "Server",
-                  "value": "nginx"
-                },
-                {
-                  "key": "Date",
-                  "value": "Mon, 02 Feb 2026 11:59:54 GMT"
-                },
-                {
-                  "key": "Content-Type",
-                  "value": "application/json"
-                },
-                {
-                  "key": "Transfer-Encoding",
-                  "value": "chunked"
-                },
-                {
-                  "key": "Connection",
-                  "value": "keep-alive"
-                },
-                {
-                  "key": "Cache-Control",
-                  "value": "private, must-revalidate"
-                },
-                {
-                  "key": "pragma",
-                  "value": "no-cache"
-                },
-                {
-                  "key": "expires",
-                  "value": "-1"
-                },
-                {
-                  "key": "X-RateLimit-Limit",
-                  "value": "60"
-                },
-                {
-                  "key": "X-RateLimit-Remaining",
-                  "value": "58"
-                },
-                {
-                  "key": "Access-Control-Allow-Origin",
-                  "value": "*"
-                },
-                {
-                  "key": "X-Powered-By",
-                  "value": "PleskLin"
-                },
-                {
-                  "key": "Content-Encoding",
-                  "value": "br"
-                }
-              ],
-              "cookie": [],
-              "body": "{\n    \"data\": {\n        \"id\": 1,\n        \"title\": \"Upcoming Tech Events This Month\",\n        \"content\": \"Discover the most exciting tech meetups, hackathons, and conferences happening this month in our venues.\",\n        \"image\": \"https://event.apiapp.kz/storage/posts/tech-events.jpg\",\n        \"category\": \"Business\",\n        \"views\": 1,\n        \"created_at\": \"28 янв, 2026\"\n    }\n}"
-            }
-          ]
+    "/api/events": {
+      "get": {
+        "tags": [
+          "events"
+        ],
+        "summary": "events",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
         }
-      ]
+      }
+    },
+    "/api/events/1": {
+      "get": {
+        "tags": [
+          "event"
+        ],
+        "summary": "event",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/api/events/{{event_id}}/register": {
+      "post": {
+        "tags": [
+          "register to event"
+        ],
+        "summary": "register to event",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/api/my/events": {
+      "get": {
+        "tags": [
+          "my events"
+        ],
+        "summary": "my events",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/api/profile": {
+      "get": {
+        "tags": [
+          "profile"
+        ],
+        "summary": "profile",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "update prodile"
+        ],
+        "summary": "update prodile",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "Aizhan",
+                  "email": "aizhan@mail.kz"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/posts": {
+      "get": {
+        "tags": [
+          "posts"
+        ],
+        "summary": "posts",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
+    },
+    "/api/posts/{{id}}": {
+      "get": {
+        "tags": [
+          "post"
+        ],
+        "summary": "post",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Successful response"
+          }
+        }
+      }
     }
-  ]
+  },
+  "components": {
+    "schemas": {},
+    "securitySchemes": {}
+  }
 }
