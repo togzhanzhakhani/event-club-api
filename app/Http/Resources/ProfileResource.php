@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\EventCategory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -15,7 +16,10 @@ class ProfileResource extends JsonResource
             'email' => $this->email,
             'preferences' => [
                 'city_id'    => data_get($this->preferences, 'city_id'),
-                'categories' => data_get($this->preferences, 'categories', []),
+                'categories' => EventCategory::whereIn(
+                    'id',
+                    data_get($this->preferences, 'categories', [])
+                )->get(['name']),
             ]
         ];
     }
