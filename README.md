@@ -124,6 +124,12 @@ All cron tasks are configured via Laravel Scheduler and executed asynchronously 
 - Protected routes require valid API token
 
 ---
+## API Documentation
+
+API is documented using OpenAPI 3.0.
+
+Swagger UI is available at:
+https://event.apiapp.kz/api/documentation
 
 ## API Endpoints
 
