@@ -16,7 +16,10 @@ return [
                 'docs_json' => 'openapi.json',
                 'docs_yaml' => null,
                 'format_to_use_for_docs' => env('L5_FORMAT_TO_USE_FOR_DOCS', 'json'),
-                'annotations' => [],
+                'docs' => public_path('docs'),
+                'annotations' => [
+                    base_path('app'),
+                ],
             ],
         ],
     ],
@@ -41,7 +44,7 @@ return [
             /*
              * Absolute path to location where parsed annotations will be stored
              */
-            'docs' => storage_path('api-docs'),
+            'docs' => public_path('docs'),
 
             /*
              * Absolute path to directory where to export views
