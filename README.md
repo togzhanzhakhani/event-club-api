@@ -39,7 +39,6 @@ The project follows a **clean and scalable architecture** with clear separation 
 app/
 ├── Http/
 │   ├── Controllers/
-│   │   ├── Api/
 │   │   │   ├── AuthController.php
 │   │   │   ├── EventController.php
 │   │   │   ├── EventRegistrationController.php
@@ -69,6 +68,7 @@ app/
 ├── Jobs/
 │   ├── DailyEventGeneratorJob.php
 └── Console/
+│   ├── ArchivePastEvents.php
     └── Kernel.php (cron jobs)
 ```
 
@@ -105,11 +105,13 @@ app/
 
 The system relies heavily on scheduled background jobs.
 
-### Daily Scheduled Jobs
+### Scheduled Jobs
 
-- **DailyEventPreparationJob**
-  - Aggregates events scheduled for the next day
-  - Generates internal preparation reports (attendance, services)
+- **ArchivePastEvents**
+  - Runs automatically every hour
+  - Checks events whose start time has already passed
+  - Marks past events as archived by setting is_archived = true
+  - Archived events are excluded from public event listings
 
 All cron tasks are configured via Laravel Scheduler and executed asynchronously using queues.
 
