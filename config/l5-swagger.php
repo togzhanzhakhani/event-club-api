@@ -13,9 +13,8 @@ return [
             'paths' => [
                 'use_absolute_path' => env('L5_SWAGGER_USE_ABSOLUTE_PATH', true),
                 'swagger_ui_assets_path' => env('L5_SWAGGER_UI_ASSETS_PATH', 'vendor/swagger-api/swagger-ui/dist/'),
-                'docs_json' => 'api-docs/openapi.json',
+                'docs_json' => 'openapi.json',
                 'docs_yaml' => null,
-                'docs' => public_path('api-docs'),
                 'format_to_use_for_docs' => env('L5_FORMAT_TO_USE_FOR_DOCS', 'json'),
                 'annotations' => [],
             ],
