@@ -17,7 +17,7 @@ class PostResource extends JsonResource
             'image'    => url(Storage::url($this->image)),
             'category' => $this->category->name,
             'views'    => $this->views,
-            'created_at' => $this->created_at->format('d M, Y'),
+            'created_at' => $this->created_at->translatedFormat('d M, Y'),
         ];
     }
 }
