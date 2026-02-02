@@ -115,35 +115,35 @@ class DatabaseSeeder extends Seeder
         //     'image' => 'events/laravel.jpg',
         //     'max_participants' => 80,
         // ]);
-        $categories = EventCategory::pluck('id')->toArray();
-        $posts = [
-            [
-                'title' => 'Upcoming Tech Events This Month',
-                'content' => 'Discover the most exciting tech meetups, hackathons, and conferences happening this month in our venues.',
-                'image' => 'posts/tech-events.jpg',
-                'category_id' => $categories[array_rand($categories)] ?? null,
-                'created_at' => Carbon::now()->subDays(5),
-                'updated_at' => Carbon::now()->subDays(5),
-            ],
-            [
-                'title' => 'Community Events: Why Offline Still Matters',
-                'content' => 'Offline events help build stronger professional communities. Here’s why in-person events still matter.',
-                'image' => 'posts/community.jpg',
-                'category_id' => $categories[array_rand($categories)] ?? null,
-                'created_at' => Carbon::now()->subDays(2),
-                'updated_at' => Carbon::now()->subDays(2),
-            ],
-            [
-                'title' => 'Free Workshops and Meetups This Week',
-                'content' => 'Join free workshops, lectures, and networking events happening across different cities.',
-                'image' => 'posts/free-events.jpg',
-                'category_id' => $categories[array_rand($categories)] ?? null,
-                'created_at' => Carbon::now()->subDay(),
-                'updated_at' => Carbon::now()->subDay(),
-            ],
-        ];
-        foreach ($posts as $post) {
-            Post::create($post);
-        }
+        // $categories = EventCategory::pluck('id')->toArray();
+        // $posts = [
+        //     [
+        //         'title' => 'Upcoming Tech Events This Month',
+        //         'content' => 'Discover the most exciting tech meetups, hackathons, and conferences happening this month in our venues.',
+        //         'image' => 'posts/tech-events.jpg',
+        //         'category_id' => $categories[array_rand($categories)] ?? null,
+        //         'created_at' => Carbon::now()->subDays(5),
+        //         'updated_at' => Carbon::now()->subDays(5),
+        //     ],
+        //     [
+        //         'title' => 'Community Events: Why Offline Still Matters',
+        //         'content' => 'Offline events help build stronger professional communities. Here’s why in-person events still matter.',
+        //         'image' => 'posts/community.jpg',
+        //         'category_id' => $categories[array_rand($categories)] ?? null,
+        //         'created_at' => Carbon::now()->subDays(2),
+        //         'updated_at' => Carbon::now()->subDays(2),
+        //     ],
+        //     [
+        //         'title' => 'Free Workshops and Meetups This Week',
+        //         'content' => 'Join free workshops, lectures, and networking events happening across different cities.',
+        //         'image' => 'posts/free-events.jpg',
+        //         'category_id' => $categories[array_rand($categories)] ?? null,
+        //         'created_at' => Carbon::now()->subDay(),
+        //         'updated_at' => Carbon::now()->subDay(),
+        //     ],
+        // ];
+        // foreach ($posts as $post) {
+        //     Post::create($post);
+        // }
     }
 }
