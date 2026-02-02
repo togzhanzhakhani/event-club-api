@@ -13,11 +13,17 @@ class Post extends Model
         'title',
         'content',
         'image',
-        'category_id'
+        'category_id',
+        'views'
     ];
 
     public function category()
     {
         return $this->belongsTo(EventCategory::class, 'category_id');
+    }
+
+    public function incrementViews(): void
+    {
+        $this->increment('views');
     }
 }

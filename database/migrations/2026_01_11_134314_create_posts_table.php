@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('content');
+            $table->unsignedInteger('views')->default(0);
             $table->string('image')->nullable();
             $table->foreignId('category_id')->nullable()->constrained('event_categories');
             $table->timestamps();
