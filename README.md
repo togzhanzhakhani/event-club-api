@@ -49,6 +49,7 @@ app/
 │   ├── Requests/
 │   │   │   ├── LoginRequest.php
 │   │   │   └── RegisterRequest.php
+│   │   │   └── UpdateProfileRequest.php
 │   ├── Resources/
 │   │   ├── CityResource.php
 │   │   ├── EventCategoryResource.php
@@ -160,17 +161,6 @@ This approach improves:
 - Testability
 - Readability
 - Scalability
-
----
-
-## Payments (Mock Implementation)
-
-Paid events and additional services use a **mock payment provider**.
-
-- No real financial transactions
-- Simulated payment intents and callbacks
-- Designed to demonstrate payment flow architecture
-
 ---
 
 ## Client Applications

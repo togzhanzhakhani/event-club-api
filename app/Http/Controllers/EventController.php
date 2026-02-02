@@ -12,7 +12,7 @@ class EventController extends Controller
     public function index()
     {
         return EventResource::collection(
-            Event::with(['venue', 'hall', 'category'])
+            Event::active()->with(['venue', 'hall', 'category'])
                 ->orderBy('starts_at')->get()
         );
     }

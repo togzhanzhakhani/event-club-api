@@ -20,12 +20,14 @@ class Event extends Model
         'price',
         'image',
         'max_participants',
+        'is_archived',
     ];
 
     protected $casts = [
         'starts_at' => 'datetime',
         'ends_at' => 'datetime',
         'price' => 'decimal:2',
+        'is_archived' => 'boolean',
     ];
 
     public function venue()
@@ -60,5 +62,10 @@ class Event extends Model
             return true;
         }
         return $this->registrations()->count() < $this->max_participants;
+    }
+
+    public function scopeActive($query)
+    {
+        return $query->where('is_archived', false);
     }
 }

@@ -13,13 +13,13 @@ return new class extends Migration
             $table->string('title');
             $table->text('description');
             $table->dateTime('starts_at');
-            $table->dateTime('ends_at');
             $table->foreignId('venue_id')->constrained();
             $table->foreignId('hall_id')->constrained();
             $table->foreignId('category_id')->constrained('event_categories');
             $table->decimal('price', 10, 2)->nullable();
             $table->string('image')->nullable();
             $table->integer('max_participants')->nullable();
+            $table->boolean('is_archived')->default(false);
             $table->timestamps();
         });
     }
