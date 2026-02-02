@@ -35,11 +35,6 @@ class User extends \TCG\Voyager\Models\User
         return $this->hasMany(EventRegistration::class);
     }
 
-    public function competitionEntries()
-    {
-        return $this->hasMany(CompetitionEntry::class);
-    }
-
     public function registeredEvents()
     {
         return $this->belongsToMany(Event::class, 'event_registrations')

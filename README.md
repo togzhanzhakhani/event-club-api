@@ -27,7 +27,6 @@ The system follows a **membership-based club model** (similar to fitness club ap
   - Browse free and paid events
   - Filter events by city, category, date
   - Register for events
-  - Participate in competitions and promotions
 - All events, content, and schedules are managed by administrators
 
 This model is inspired by **club-based systems** (e.g. gym memberships), but applied to event discovery and attendance.
@@ -46,19 +45,18 @@ app/
 │   │   ├── Api/
 │   │   │   ├── AuthController.php
 │   │   │   ├── EventController.php
-│   │   │   ├── CompetitionController.php
+│   │   │   ├── EventRegistrationController.php
+│   │   │   ├── MetaController.php
 │   │   │   ├── PostController.php
 │   │   │   └── ProfileController.php
 │   ├── Requests/
-│   │   ├── Auth/
 │   │   │   ├── LoginRequest.php
 │   │   │   └── RegisterRequest.php
-│   │   └── Competition/
-│   │       └── ParticipateRequest.php
 │   ├── Resources/
+│   │   ├── CityResource.php
+│   │   ├── EventCategoryResource.php
 │   │   ├── EventResource.php
-│   │   ├── EventCollection.php
-│   │   ├── CompetitionResource.php
+│   │   ├── EventDatailResource.php
 │   │   ├── PostResource.php
 │   │   └── UserResource.php
 ├── Models/
@@ -66,19 +64,15 @@ app/
 │   ├── Event.php
 │   ├── EventCategory.php
 │   ├── EventRegistration.php
-│   ├── Competition.php
-│   ├── CompetitionEntry.php
 │   ├── Post.php
 │   ├── City.php
 │   ├── Venue.php
 │   └── Hall.php
 ├── Services/
 │   ├── EventService.php
-│   ├── CompetitionService.php
 │   └── NotificationService.php
 ├── Jobs/
 │   ├── DailyEventGeneratorJob.php
-│   ├── DailyCompetitionCheckJob.php
 │   └── SendNotificationJob.php
 └── Console/
     └── Kernel.php (cron jobs)
@@ -113,11 +107,6 @@ app/
 ### Content
 - **Post** — news, announcements, articles
 - **Media** — polymorphic media storage (images, files)
-
-### Gamification
-- **Competition** — contests, raffles, promotions
-- **CompetitionEntry** — user participation and winners
-
 ---
 
 ## Background Jobs & Cron Tasks
@@ -160,7 +149,6 @@ All cron tasks are configured via Laravel Scheduler and executed asynchronously 
 ```
 POST   /api/register         
 POST   /api/login            
-GET    /api/user             
 ```
 
 ### Events
@@ -168,14 +156,6 @@ GET    /api/user
 GET    /api/events           
 GET    /api/events/{id}      
 POST   /api/events/{id}/register  
-```
-
-### Competitions
-```
-GET    /api/competitions     
-GET    /api/competitions/{id}
-POST   /api/competitions/{id}/participate 
-GET    /api/competitions/my
 ```
 
 ### Posts
